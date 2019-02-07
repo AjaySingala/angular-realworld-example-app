@@ -13,7 +13,8 @@ exports.config = {
   },
   directConnect: true,
   //baseUrl: 'http://localhost:4200/',
-  baseUrl: 'https://angularrwex.azurewebsites.net',
+  //baseUrl: 'https://angularrwex.azurewebsites.net',
+  baseUrl: 'https://localhost:4444/wd/hub',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
