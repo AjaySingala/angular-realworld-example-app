@@ -1,4 +1,5 @@
 {
 	"assets": [ "src/favicon.ico",
-	"src/assets"]
+	"src/assets",
+	"src/web.config"]
 }
