@@ -1,0 +1,39 @@
+resources:
+- repo: self
+
+pool:
+  vmImage: Hosted VS2017
+  demands: npm
+
+steps:
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    verbose: false
+
+- task: CmdLine@1
+  displayName: 'Update WebDriver'
+  inputs:
+    filename: node
+    arguments: 'node_modules/protractor/bin/webdriver-manager update --versions.chrome 2.40'
+
+- task: CmdLine@1
+  displayName: 'Run test cases'
+  inputs:
+    filename: node
+    arguments: 'node_modules/protractor/bin/protractor protractor.conf.js'
+
+- powershell: |
+   $date=$(Get-Date).ToUniversalTime().ToString(‘d-M-yyyy-HH’);
+   Write-Host “##vso[task.setvariable variable=time]$date”
+   
+  workingDirectory: e2e/testResults
+  displayName: 'PowerShell Script'
+
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results **/TEST-*.xml'
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: '**/TEST-RESULTS.xml'
+
