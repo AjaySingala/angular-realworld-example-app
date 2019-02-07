@@ -36,7 +36,7 @@ describe('Conduit App E2E Test Suite', () => {
 	})
 })
 
-// // E2E Testing Sample #1
+// // E2E Testing Sample #2
 // describe('login page', function () {
 
 // 	browser.get('https://app.bitrise.io/users/sign_in');
