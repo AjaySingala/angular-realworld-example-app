@@ -10,31 +10,31 @@ describe('Conduit App E2E Test Suite', () => {
 			homePage.getPage();
 		});
 
-		it('should have right title', () => {
-			homePage.getPageTitle()
-				.then((title: string) => {
-					expect(title).toEqual('Conduit');
-				});
-		});
+// 		it('should have right title', () => {
+// 			homePage.getPageTitle()
+// 				.then((title: string) => {
+// 					expect(title).toEqual('Conduit');
+// 				});
+// 		});
 
-		it('should return an tag name', () => {
-			//browser.wait(homePage.getHomePageTag().getText(), 8000);
-			const expected = 'home-page';
-			const tag = homePage.getHomePageTag().getTagName()
-				.then((tag: string) => {
-					expect(tag).toEqual(expected);
-				});
-		});
+// 		it('should return a tag name', () => {
+// 			//browser.wait(homePage.getHomePageTag().getText(), 8000);
+// 			const expected = 'home-page';
+// 			const tag = homePage.getHomePageTag().getTagName()
+// 				.then((tag: string) => {
+// 					expect(tag).toEqual(expected);
+// 				});
+// 		});
 
-		it('should return globalFeedTab', () => {
-			const expected = 'Global Feed';
-			homePage.globalFeedTab().getText()
-				.then((tag: string) => {
-					expect(tag).toEqual(expected);
-				});
-		})
-	})
-})
+// 		it('should return globalFeedTab', () => {
+// 			const expected = 'Global Feed';
+// 			homePage.globalFeedTab().getText()
+// 				.then((tag: string) => {
+// 					expect(tag).toEqual(expected);
+// 				});
+// 		})
+// 	})
+// })
 
 // // E2E Testing Sample #2
 // describe('login page', function () {
@@ -43,17 +43,18 @@ describe('Conduit App E2E Test Suite', () => {
 
 // 	it('should render login page', function () {
 // 		// Checking the current url
-// 		var currentUrl = browser.driver.getCurrentUrl();
+// 		let currentUrl = browser.driver.getCurrentUrl();
 // 		expect(currentUrl).toMatch('/sign_in');
 // 	});
 
 // 	it('should signin', function () {
 // 		// Find page elements
-// 		var userNameField = browser.driver.findElement(by.name('login'));
-// 		var userPassField = browser.driver.findElement(by.name('password'));
+// 		let userNameField = browser.driver.findElement(by.name('login'));
+// 		let userPassField = browser.driver.findElement(by.name('password'));
 
-// 		//finding button to sigin
-// 		var loginForm = browser.driver.findElement(by.name("simpleSignInForm"));
+// 		// finding button to sigin
+// 		let loginForm = browser.driver.findElement(by.name("simpleSignInForm"));
+// 		// let loginForm = browser.driver.findElement(by.tagName("form"));
 
 // 		// Fill input fields
 // 		console.log('entering username');
@@ -62,8 +63,8 @@ describe('Conduit App E2E Test Suite', () => {
 // 		userPassField.sendKeys('Chittu@123');
 
 // 		// Ensure fields contains what we've entered
-// 		//expect(userNameField.getAttribute('value')).toEqual('srividhya.pasupathy@imaginea.com');
-// 		//expect(userPassField.getAttribute('value')).toEqual('Chittu@123');		
+// 		// expect(userNameField.getAttribute('value')).toEqual('srividhya.pasupathy@imaginea.com');
+// 		// expect(userPassField.getAttribute('value')).toEqual('Chittu@123');		
 // 		userNameField.getAttribute('value')
 // 			.then((attribValue: string) => {
 // 				expect(attribValue).toEqual('srividhya.pasupathy@imaginea.com');
@@ -74,7 +75,7 @@ describe('Conduit App E2E Test Suite', () => {
 // 				expect(attribValue).toEqual('Chittu@123');
 // 			});
 
-// 		console.log('clicking sigin button');
+// 		// console.log('clicking sigin button');
 // 		loginForm.submit();
 // 		console.log("done");
 // 		browser.waitForAngular();
