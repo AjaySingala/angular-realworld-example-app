@@ -10,31 +10,31 @@ describe('Conduit App E2E Test Suite', () => {
 			homePage.getPage();
 		});
 
-// 		it('should have right title', () => {
-// 			homePage.getPageTitle()
-// 				.then((title: string) => {
-// 					expect(title).toEqual('Conduit');
-// 				});
-// 		});
+		it('should have right title', () => {
+			homePage.getPageTitle()
+				.then((title: string) => {
+					expect(title).toEqual('Conduit');
+				});
+		});
 
-// 		it('should return a tag name', () => {
-// 			//browser.wait(homePage.getHomePageTag().getText(), 8000);
-// 			const expected = 'home-page';
-// 			const tag = homePage.getHomePageTag().getTagName()
-// 				.then((tag: string) => {
-// 					expect(tag).toEqual(expected);
-// 				});
-// 		});
+		it('should return a tag name', () => {
+			//browser.wait(homePage.getHomePageTag().getText(), 8000);
+			const expected = 'home-page';
+			const tag = homePage.getHomePageTag().getTagName()
+				.then((tag: string) => {
+					expect(tag).toEqual(expected);
+				});
+		});
 
-// 		it('should return globalFeedTab', () => {
-// 			const expected = 'Global Feed';
-// 			homePage.globalFeedTab().getText()
-// 				.then((tag: string) => {
-// 					expect(tag).toEqual(expected);
-// 				});
-// 		})
-// 	})
-// })
+		it('should return globalFeedTab', () => {
+			const expected = 'Global Feed';
+			homePage.globalFeedTab().getText()
+				.then((tag: string) => {
+					expect(tag).toEqual(expected);
+				});
+		})
+	})
+})
 
 // // E2E Testing Sample #2
 // describe('login page', function () {
