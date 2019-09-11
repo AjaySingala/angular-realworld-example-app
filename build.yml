@@ -27,7 +27,7 @@ steps:
    $date=$(Get-Date).ToUniversalTime().ToString(‘d-M-yyyy-HH’);
    Write-Host “##vso[task.setvariable variable=time]$date”
    
-  workingDirectory: e2e/_report
+  workingDirectory: e2e/testResults
   displayName: 'PowerShell Script'
 
 - task: PublishTestResults@2
