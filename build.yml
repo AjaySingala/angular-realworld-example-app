@@ -27,13 +27,13 @@ steps:
    $date=$(Get-Date).ToUniversalTime().ToString(‘d-M-yyyy-HH’);
    Write-Host “##vso[task.setvariable variable=time]$date”
    
-  workingDirectory: e2e/testResults
+  workingDirectory: e2e/_report
   displayName: 'PowerShell Script'
 
 - task: PublishTestResults@2
-  displayName: 'Publish Test Results **/TEST-*.xml'
+  displayName: 'Publish Test Results **/*.xml'
   condition: succeededOrFailed()
   inputs:
     testRunner: JUnit
-    testResultsFiles: '**/TEST-RESULTS.xml'
+    testResultsFiles: '**/*.xml'
 
